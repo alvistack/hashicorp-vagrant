@@ -1,0 +1,5 @@
+vagrant (100:2.3.7+20230622.f056c293-1) UNRELEASED; urgency=medium
+
+  * https://github.com/hashicorp/vagrant/commit/f056c293b5d4ebf9fad4d4985c40e4837ff434ce
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Thu, 22 Jun 2023 11:21:50 +0800

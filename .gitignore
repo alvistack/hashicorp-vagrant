@@ -80,3 +80,7 @@ lib/vagrant/vagrant_ssl.so
 
 # direnv directory
 .direnv
+
+bundle
+embedded
+vendor

@@ -1,0 +1,17 @@
+vagrant: copyright-without-copyright-notice
+vagrant: custom-library-search-path
+vagrant: dir-or-file-in-opt
+vagrant: embedded-library
+vagrant: executable-not-elf-or-script
+vagrant: hardening-no-pie
+vagrant: initial-upload-closes-no-bugs
+vagrant: mismatched-override embedded-library
+vagrant: no-manual-page
+vagrant: package-contains-vcs-control-file
+vagrant: ruby-script-but-no-ruby-dep
+vagrant: script-not-executable
+vagrant: shared-library-lacks-prerequisites
+vagrant: statically-linked-binary
+vagrant: unstripped-binary-or-object
+vagrant: windows-devel-file-in-package
+vagrant: zero-byte-file-in-doc-directory

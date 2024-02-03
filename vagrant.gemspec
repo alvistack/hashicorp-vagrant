@@ -36,13 +36,9 @@ Gem::Specification.new do |s|
   s.add_dependency "rexml", "~> 3.2"
   s.add_dependency "rubyzip", "~> 2.3.2"
   s.add_dependency "vagrant_cloud", "~> 3.1.2"
-  s.add_dependency "wdm", "~> 0.2.0"
   s.add_dependency "winrm", ">= 2.3.9", "< 3.0"
   s.add_dependency "winrm-elevated", ">= 1.2.3", "< 2.0"
   s.add_dependency "winrm-fs", ">= 1.3.5", "< 2.0"
-
-  # Needed for go generate to use grpc_tools_ruby_protoc
-  s.add_development_dependency "grpc-tools", "~> 1.41"
 
   # required to include https://github.com/ruby/ipaddr/issues/35
   s.add_dependency "ipaddr", ">= 1.2.4"

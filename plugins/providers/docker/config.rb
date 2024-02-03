@@ -3,7 +3,7 @@
 
 require "pathname"
 
-require_relative "../../../lib/vagrant/util/platform"
+require "vagrant/util/platform"
 
 module VagrantPlugins
   module DockerProvider

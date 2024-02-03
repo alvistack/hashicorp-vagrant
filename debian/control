@@ -1,0 +1,31 @@
+Source: vagrant
+Section: admin
+Priority: optional
+Standards-Version: 4.5.0
+Maintainer: Wong Hoi Sing Edison <hswong3i@pantarei-design.com>
+Homepage: https://github.com/hashicorp/vagrant/tags
+Vcs-Browser: https://github.com/alvistack/hashicorp-vagrant
+Vcs-Git: https://github.com/alvistack/hashicorp-vagrant.git
+Build-Depends:
+ debhelper,
+ debhelper-compat (= 10),
+ chrpath,
+ fdupes,
+ libffi-dev,
+ ruby-bundler,
+ ruby-dev (>= 3.0),
+
+Package: vagrant
+Architecture: amd64
+Description: Build and distribute virtualized development environments
+ Vagrant is a tool for building and distributing virtualized development
+ environments.
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ curl,
+ libarchive-tools,
+ openssh-client,
+ rsync,
+ ruby (>= 3.0),
+ ruby-bundler,

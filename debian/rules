@@ -1,0 +1,46 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_build:
+	mkdir -p bin
+	bundle config set --local without development
+	bundle config set --local path ./bundle
+	bundle install --verbose --local --standalone
+	bundle config set --local deployment true
+	bundle install --verbose --local --standalone
+
+override_dh_auto_install:
+	install -Dpm755 -d debian/tmp/usr/bin
+	install -Dpm755 -d debian/tmp/usr/share/bash-completion/completions
+	install -Dpm755 -d debian/tmp/opt
+	install -Dpm644 contrib/bash/completion.sh debian/tmp/usr/share/bash-completion/completions/vagrant
+	mkdir -p debian/tmp/opt/vagrant
+	tar xf ./vendor/cache/vagrant-2.4.2.gem data.tar.gz -O | tar zx -C debian/tmp/opt/vagrant
+	cp -rfp .bundle bundle Gemfile.lock debian/tmp/opt/vagrant/
+	pushd debian/tmp/opt/vagrant && \
+		bundle binstubs --all --force --path binstubs && \
+		bundle exec vagrant --version && \
+	popd
+	ln -fs /opt/vagrant/binstubs/vagrant debian/tmp/usr/bin/vagrant
+	fdupes -qnrps debian/tmp
+	find debian/tmp -type f -name '*.so' -exec chrpath -d {} \;
+	find debian/tmp -type f -exec sed -i 's?$(CURDIR)/debian/tmp??g' {} \;
+	find debian/tmp -type f -exec sed -i 's?^#!.*ruby.*?#!/usr/bin/ruby?g' {} \;
+
+override_dh_strip:
+
+override_dh_strip_nondeterminism:
+
+override_dh_shlibdeps:
+
+override_dh_makeshlibs:
+
+override_dh_dwz:
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@

@@ -3,7 +3,7 @@
 
 Vagrant.require "tempfile"
 
-require_relative "../../../../lib/vagrant/util/template_renderer"
+require "vagrant/util/template_renderer"
 
 module VagrantPlugins
   module GuestALT

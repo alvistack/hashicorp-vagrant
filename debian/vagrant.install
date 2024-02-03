@@ -1,0 +1,3 @@
+opt/vagrant
+usr/bin/*
+usr/share/bash-completion/completions/*

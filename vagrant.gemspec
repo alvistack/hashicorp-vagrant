@@ -15,12 +15,13 @@ Gem::Specification.new do |s|
   s.required_ruby_version     = ">= 3.0", "< 3.4"
   s.required_rubygems_version = ">= 1.3.6"
 
+  s.add_dependency "base64", "~> 0.2.0"
+  s.add_dependency "logger", "~> 1.6.1"
+  s.add_dependency "ostruct", "~> 0.1.0"
   s.add_dependency "bcrypt_pbkdf", "~> 1.1"
   s.add_dependency "childprocess", "~> 4.1.0"
   s.add_dependency "ed25519", "~> 1.3.0"
   s.add_dependency "erubi"
-  s.add_dependency 'googleapis-common-protos-types', '~> 1.3'
-  s.add_dependency "grpc", "~> 1.56.0"
   s.add_dependency "hashicorp-checkpoint", "~> 0.1.5"
   s.add_dependency "i18n", "~> 1.12"
   s.add_dependency "listen", "~> 3.7"
@@ -32,16 +33,12 @@ Gem::Specification.new do |s|
   s.add_dependency "net-scp", "~> 4.0"
   s.add_dependency "rb-kqueue", "~> 0.2.0"
   s.add_dependency "rexml", "~> 3.2"
-  s.add_dependency "rgl", "~> 0.5.10"
+  s.add_dependency "rgl", "~> 0.6.6"
   s.add_dependency "rubyzip", "~> 2.3.2"
   s.add_dependency "vagrant_cloud", "~> 3.1.1"
-  s.add_dependency "wdm", "~> 0.1.1"
   s.add_dependency "winrm", ">= 2.3.6", "< 3.0"
   s.add_dependency "winrm-elevated", ">= 1.2.3", "< 2.0"
   s.add_dependency "winrm-fs", ">= 1.3.5", "< 2.0"
-
-  # Needed for go generate to use grpc_tools_ruby_protoc
-  s.add_development_dependency "grpc-tools", "~> 1.41"
 
   # required to include https://github.com/ruby/ipaddr/issues/35
   s.add_dependency "ipaddr", ">= 1.2.4"
@@ -53,7 +50,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec", "~> 3.11"
   s.add_development_dependency "rspec-its", "~> 1.3.0"
   s.add_development_dependency "fake_ftp", "~> 0.3.0"
-  s.add_development_dependency "webrick", "~> 1.7.0"
+  s.add_development_dependency "webrick", "~> 1.8.0"
 
   # The following block of code determines the files that should be included
   # in the gem. It does this by reading all the files in the directory where

@@ -3,7 +3,7 @@
 
 Vagrant.require "fileutils"
 
-require_relative "../../../../lib/vagrant/action/general/package_setup_folders"
+require "vagrant/action/general/package"
 
 module VagrantPlugins
   module ProviderVirtualBox

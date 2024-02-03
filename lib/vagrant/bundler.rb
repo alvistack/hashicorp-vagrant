@@ -663,12 +663,10 @@ module Vagrant
       if !self_spec
         @logger.warn("Failed to locate activated vagrant specification. Activating...")
         self_spec = Gem::Specification.find { |s| s.name == "vagrant" }
-        if !self_spec
-          @logger.error("Failed to locate Vagrant RubyGem specification")
-          raise Vagrant::Errors::SourceSpecNotFound
-        end
+        if self_spec
         self_spec.activate
         @logger.info("Activated vagrant specification version - #{self_spec.version}")
+        end
       end
       # discover all the gems we have available
       list = {}

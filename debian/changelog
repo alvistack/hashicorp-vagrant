@@ -1,0 +1,5 @@
+vagrant (100:2.3.4-1) UNRELEASED; urgency=medium
+
+  * https://github.com/hashicorp/vagrant/releases/tag/v2.3.4
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Sat, 20 Jan 2024 11:06:26 +0800

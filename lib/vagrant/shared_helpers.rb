@@ -32,7 +32,7 @@ module Vagrant
   #
   # @return [Boolean]
   def self.in_installer?
-    !!ENV["VAGRANT_INSTALLER_ENV"]
+    true
   end
 
   # This returns a true/false if we are running within a bundler environment

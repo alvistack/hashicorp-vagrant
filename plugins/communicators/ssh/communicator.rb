@@ -456,6 +456,11 @@ module VagrantPlugins
                   connect_opts[:remote_user] = ssh_info[:remote_user]
                 end
 
+                if @machine.config.ssh.keep_alive
+                  connect_opts[:keepalive] = true
+                  connect_opts[:keepalive_interval] = 5
+                end
+                
                 @logger.info("Attempting to connect to SSH...")
                 @logger.info("  - Host: #{ssh_info[:host]}")
                 @logger.info("  - Port: #{ssh_info[:port]}")
